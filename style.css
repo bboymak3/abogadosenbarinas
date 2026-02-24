@@ -1,0 +1,74 @@
+/* Estilos adicionales para AbogadosEnBarinas.pages.dev */
+/* Estos complementan los estilos inline de la página principal */
+
+/* Variables CSS adicionales */
+:root {
+    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Utilidades de espaciado */
+.py-6 {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+}
+
+/* Mejoras de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Optimización para impresión */
+@media print {
+    .whatsapp-float,
+    .modal-whatsapp,
+    .main-nav {
+        display: none !important;
+    }
+    
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+}
+
+/* Mejoras de rendimiento */
+img {
+    max-width: 100%;
+    height: auto;
+    loading: lazy;
+}
+
+/* Focus visible para accesibilidad */
+*:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-light);
+}
+
+/* Selección de texto */
+::selection {
+    background: var(--accent);
+    color: var(--primary);
+}
