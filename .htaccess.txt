@@ -1,0 +1,18 @@
+# 1. Forzar HTTPS
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# 2. Forzar WWW (Opcional: elimina este bloque si NO quieres www)
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule ^(.*)$ https://www.%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# 3. Redirigir /index.html a la raíz para evitar contenido duplicado
+RewriteCond %{THE_REQUEST} /index\.html [NC]
+RewriteRule ^(.*)index\.html$ /$1 [R=301,L]
+
+# 4. Inyectar Canonical dinámicamente (Para SEO)
+<IfModule mod_headers.c>
+    # Establece el canonical en la versión con www y https
+    Header set Link "<https://www.abogadosenbarinas.pages.dev%{REQUEST_URI}>; rel=\"canonical\""
+</IfModule>

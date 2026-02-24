@@ -1,5 +1,10 @@
 User-agent: *
 Allow: /
 
-# Indica la ubicación del sitemap para facilitar la indexación
-Sitemap: https://cachamitadeoro.pages.dev/sitemap.xml
+# Bloquear carpetas de sistema si las hubiera (opcional pero recomendado)
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /logs/
+
+# Tu Sitemap
+Sitemap: https://abogadosenbarinas.pages.dev/sitemap.xml
