@@ -4,10 +4,11 @@
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-RFW5F7YBBR"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-RFW5F7YBBR');
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-RFW5F7YBBR');
     </script>
 
     <meta charset="UTF-8">
@@ -18,6 +19,9 @@
     
     <!-- Canonical -->
     <link rel="canonical" href="https://abogadosenbarinas.pages.dev/">
+    
+    <!-- FAVICON (Icono de Pestaña) - IMAGEN AGREGADA AQUÍ -->
+    <link rel="shortcut icon" href="https://abogadosvalencia.pages.dev/images/abogados-en-barinas-tramines-legales-abogado-notaria-registro-tribunales.jpg" type="image/jpeg">
     
     <!-- Open Graph -->
     <meta property="og:title" content="Abogados en Barinas | Directorio Legal Especializado">
@@ -187,7 +191,7 @@
             transform: translateY(-2px);
         }
         
-        /* Hero Section */
+        /* Hero Section - IMAGEN DE BANNER AGREGADA */
         .hero-barinas {
             background: linear-gradient(135deg, var(--primary) 0%, #0d1642 100%);
             color: white;
@@ -196,6 +200,7 @@
             overflow: hidden;
         }
         
+        /* Imagen de fondo superpuesta */
         .hero-barinas::before {
             content: '';
             position: absolute;
@@ -203,7 +208,36 @@
             left: 0;
             right: 0;
             bottom: 0;
+            /* URL DE LA IMAGEN DE BANNER */
+            background-image: url('https://abogadosvalencia.pages.dev/images/abogados-en-barinas-tramines-legales-abogado-notaria-registro-tribunales.jpg');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.2; /* Oscuridad para que el texto se lea bien */
+            z-index: 1;
+        }
+        
+        /* Patrón decorativo original sobre la imagen */
+        .hero-barinas::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
             background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.03"><path d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/></g></g></svg>');
+            z-index: 2;
+        }
+        
+        /* Asegurar que el contenido esté encima de la imagen */
+        .hero-barinas .container, 
+        .hero-barinas .barinas-badge,
+        .hero-barinas .hero-title,
+        .hero-barinas .hero-subtitle,
+        .hero-barinas .btn-gold,
+        .hero-barinas .btn-outline-light,
+        .hero-barinas .badge {
+            position: relative;
+            z-index: 3;
         }
         
         .barinas-badge {
@@ -1556,20 +1590,28 @@
         </div>
     </section>
 
-    <!-- CTA FINAL -->
+    <!-- CTA FINAL CON IMAGEN DE CONTACTO -->
     <section class="cta-section">
         <div class="container">
-            <h2 class="mb-4" data-aos="fade-up">¿Buscas un abogado específico en Barinas?</h2>
-            <p class="lead mb-4" data-aos="fade-up" data-aos-delay="100">
-                Si no encuentras la especialidad que necesitas, contáctanos directamente.<br>
-                Tenemos acceso a la red más grande de abogados en el estado Barinas.
-            </p>
-            <button class="btn btn-lg fw-bold px-5" onclick="openWhatsAppModal('consulta general landing')" data-aos="zoom-in" data-aos-delay="200" style="background: var(--accent); color: var(--primary);">
-                <i class="fab fa-whatsapp me-2"></i> Hablar con un Asesor Ahora
-            </button>
-            <p class="mt-3 mb-0 opacity-75">
-                <i class="fas fa-phone me-2"></i> También puedes llamar al: <strong>0416-7775771</strong>
-            </p>
+            <div class="row align-items-center">
+                <div class="col-lg-7 text-center text-lg-start" data-aos="fade-right">
+                    <h2 class="mb-4">¿Buscas un abogado específico en Barinas?</h2>
+                    <p class="lead mb-4">
+                        Si no encuentras la especialidad que necesitas, contáctanos directamente.<br>
+                        Tenemos acceso a la red más grande de abogados en el estado Barinas.
+                    </p>
+                    <button class="btn btn-lg fw-bold px-5" onclick="openWhatsAppModal('consulta general landing')" style="background: var(--accent); color: var(--primary);">
+                        <i class="fab fa-whatsapp me-2"></i> Hablar con un Asesor Ahora
+                    </button>
+                    <p class="mt-3 mb-0 opacity-75">
+                        <i class="fas fa-phone me-2"></i> También puedes llamar al: <strong>0416-7775771</strong>
+                    </p>
+                </div>
+                <div class="col-lg-5 text-center mt-4 mt-lg-0" data-aos="fade-left">
+                    <!-- IMAGEN DE CONTACTO AGREGADA AQUÍ -->
+                    <img src="https://abogadosvalencia.pages.dev/images/abogados-en-barinas-tramines-legales-abogado-notaria-registro-tribunales.jpg" alt="Abogados en Barinas - Contacto" class="img-fluid rounded shadow border border-3 border-white">
+                </div>
+            </div>
         </div>
     </section>
 
