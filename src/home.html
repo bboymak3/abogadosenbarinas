@@ -1,0 +1,813 @@
+<!-- Hero Section -->
+<section class="hero-barinas" id="inicio">
+    <div class="container position-relative">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 text-center">
+                <span class="barinas-badge" data-aos="fade-down">
+                    <i class="fas fa-map-marker-alt me-2"></i> ESTADO BARINAS, VENEZUELA
+                </span>
+                <h1 class="hero-title" data-aos="fade-up">
+                    Abogados en <span style="color: var(--accent);">Barinas</span><br>
+                    <small style="font-size: 0.6em; font-weight: 400;">Directorio Legal Especializado</small>
+                </h1>
+                <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">
+                    Encuentra abogados especialistas en derecho civil, familiar, laboral y penal en todos los municipios de Barinas. 
+                    <strong>Atención inmediata vía WhatsApp en Barinas ciudad, Barinitas, Socopó y más.</strong>
+                </p>
+                
+                <div class="d-flex justify-content-center gap-3 flex-wrap" data-aos="fade-up" data-aos-delay="200">
+                    <button class="btn-gold" onclick="openWhatsAppModal('consulta general')">
+                        <i class="fab fa-whatsapp me-2"></i> Consultar Ahora
+                    </button>
+                    <a href="{{TEL_HREF}}" class="btn-outline-light">
+                        <i class="fas fa-phone me-2"></i> Llamar
+                    </a>
+                </div>
+                
+                <div class="mt-4" data-aos="fade-up" data-aos-delay="300">
+                    <span class="badge bg-success me-2">✓ Disponible 24/7</span>
+                    <span class="badge bg-warning text-dark me-2">✓ Consulta Gratis</span>
+                    <span class="badge bg-info">✓ Respuesta en 10 min</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Bar -->
+<section class="stats-bar">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-3 col-6 mb-3 mb-md-0">
+                <div class="h3 mb-0">12</div>
+                <small>Municipios</small>
+            </div>
+            <div class="col-md-3 col-6 mb-3 mb-md-0">
+                <div class="h3 mb-0">6+</div>
+                <small>Especialidades</small>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="h3 mb-0">500+</div>
+                <small>Casos Resueltos</small>
+            </div>
+            <div class="col-md-3 col-6">
+                <div class="h3 mb-0">⚡</div>
+                <small>Atención Inmediata</small>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Municipios -->
+<section class="py-5 bg-white border-bottom">
+    <div class="container">
+        <p class="text-center mb-4 text-muted">
+            <i class="fas fa-search-location me-2"></i> Selecciona tu municipio en Barinas: <a href="/municipios/">ver todos</a>
+        </p>
+        <div class="text-center">
+{{MUNICIPIO_TAGS}}
+        </div>
+    </div>
+</section>
+
+<!-- DIRECTORIO DE ABOGADOS -->
+<section id="directorio" class="py-5">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Directorio de Abogados en Barinas</h2>
+        <p class="text-center text-muted mb-5">Especialistas certificados disponibles para atenderte</p>
+        
+        <div class="row g-4">
+            <!-- Abogado 1: Derecho Civil -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                <div class="abogado-card">
+                    <div class="abogado-header">
+                        <span class="abogado-verified"><i class="fas fa-check-circle me-1"></i> Verificado</span>
+                        <div class="abogado-avatar">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <h4 class="mb-1">Derecho Civil</h4>
+                        <small>Barinas, Venezuela</small>
+                    </div>
+                    <div class="abogado-body">
+                        <ul class="especialidad-list">
+                            <li><i class="fas fa-check"></i> Contratos y obligaciones</li>
+                            <li><i class="fas fa-check"></i> Propiedad y bienes</li>
+                            <li><i class="fas fa-check"></i> Sucesiones y herencias</li>
+                            <li><i class="fas fa-check"></i> Documentos legales</li>
+                            <li><i class="fas fa-check"></i> Títulos supletorios</li>
+                        </ul>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="text-success fw-bold"><i class="fas fa-circle me-1 small"></i> En línea</span>
+                            <span class="text-muted small">Respuesta: 5 min</span>
+                        </div>
+                        <button class="whatsapp-btn-large" onclick="openWhatsAppModal('Derecho Civil Barinas')">
+                            <i class="fab fa-whatsapp"></i> Contactar Abogado
+                        </button>
+                        <a href="/servicios/derecho-civil" class="d-block text-center mt-2 small">Ver especialidad <i class="fas fa-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Abogado 2: Familia -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                <div class="abogado-card">
+                    <div class="abogado-header">
+                        <span class="abogado-verified"><i class="fas fa-check-circle me-1"></i> Verificado</span>
+                        <div class="abogado-avatar" style="background: #e74c3c;">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4 class="mb-1">Derecho de Familia</h4>
+                        <small>Barinas, Venezuela</small>
+                    </div>
+                    <div class="abogado-body">
+                        <ul class="especialidad-list">
+                            <li><i class="fas fa-check"></i> Divorcios express</li>
+                            <li><i class="fas fa-check"></i> Custodia de menores</li>
+                            <li><i class="fas fa-check"></i> Pensión alimenticia</li>
+                            <li><i class="fas fa-check"></i> Régimen de visitas</li>
+                            <li><i class="fas fa-check"></i> Adopciones</li>
+                        </ul>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="text-success fw-bold"><i class="fas fa-circle me-1 small"></i> En línea</span>
+                            <span class="text-muted small">Respuesta: 3 min</span>
+                        </div>
+                        <button class="whatsapp-btn-large" onclick="openWhatsAppModal('Derecho de Familia Barinas')">
+                            <i class="fab fa-whatsapp"></i> Contactar Abogado
+                        </button>
+                        <a href="/servicios/derecho-de-familia" class="d-block text-center mt-2 small">Ver especialidad <i class="fas fa-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Abogado 3: Laboral -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                <div class="abogado-card">
+                    <div class="abogado-header">
+                        <span class="abogado-verified"><i class="fas fa-check-circle me-1"></i> Verificado</span>
+                        <div class="abogado-avatar" style="background: #f39c12;">
+                            <i class="fas fa-briefcase"></i>
+                        </div>
+                        <h4 class="mb-1">Derecho Laboral</h4>
+                        <small>Barinas, Venezuela</small>
+                    </div>
+                    <div class="abogado-body">
+                        <ul class="especialidad-list">
+                            <li><i class="fas fa-check"></i> Despidos injustificados</li>
+                            <li><i class="fas fa-check"></i> Cobro de prestaciones</li>
+                            <li><i class="fas fa-check"></i> Accidentes laborales</li>
+                            <li><i class="fas fa-check"></i> Contratos colectivos</li>
+                            <li><i class="fas fa-check"></i> Reclamo de vacaciones</li>
+                        </ul>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="text-success fw-bold"><i class="fas fa-circle me-1 small"></i> En línea</span>
+                            <span class="text-muted small">Respuesta: 7 min</span>
+                        </div>
+                        <button class="whatsapp-btn-large" onclick="openWhatsAppModal('Derecho Laboral Barinas')">
+                            <i class="fab fa-whatsapp"></i> Contactar Abogado
+                        </button>
+                        <a href="/servicios/derecho-laboral" class="d-block text-center mt-2 small">Ver especialidad <i class="fas fa-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Abogado 4: Penal -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                <div class="abogado-card">
+                    <div class="abogado-header">
+                        <span class="abogado-verified"><i class="fas fa-check-circle me-1"></i> Verificado</span>
+                        <div class="abogado-avatar" style="background: #9b59b6;">
+                            <i class="fas fa-gavel"></i>
+                        </div>
+                        <h4 class="mb-1">Derecho Penal</h4>
+                        <small>Barinas, Venezuela</small>
+                    </div>
+                    <div class="abogado-body">
+                        <ul class="especialidad-list">
+                            <li><i class="fas fa-check"></i> Defensa criminal</li>
+                            <li><i class="fas fa-check"></i> Juicios orales</li>
+                            <li><i class="fas fa-check"></i> Libertad bajo fianza</li>
+                            <li><i class="fas fa-check"></i> Apelaciones</li>
+                            <li><i class="fas fa-check"></i> Medidas cautelares</li>
+                        </ul>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="text-warning fw-bold"><i class="fas fa-circle me-1 small"></i> Ocupado</span>
+                            <span class="text-muted small">Respuesta: 15 min</span>
+                        </div>
+                        <button class="whatsapp-btn-large" onclick="openWhatsAppModal('Derecho Penal Barinas')">
+                            <i class="fab fa-whatsapp"></i> Contactar Abogado
+                        </button>
+                        <a href="/servicios/derecho-penal" class="d-block text-center mt-2 small">Ver especialidad <i class="fas fa-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Abogado 5: Accidentes -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                <div class="abogado-card">
+                    <div class="abogado-header">
+                        <span class="abogado-verified"><i class="fas fa-check-circle me-1"></i> Verificado</span>
+                        <div class="abogado-avatar" style="background: #e67e22;">
+                            <i class="fas fa-car-crash"></i>
+                        </div>
+                        <h4 class="mb-1">Accidentes de Tránsito</h4>
+                        <small>Barinas, Venezuela</small>
+                    </div>
+                    <div class="abogado-body">
+                        <ul class="especialidad-list">
+                            <li><i class="fas fa-check"></i> Lesiones personales</li>
+                            <li><i class="fas fa-check"></i> Reclamos a seguros</li>
+                            <li><i class="fas fa-check"></i> Indemnizaciones</li>
+                            <li><i class="fas fa-check"></i> Defensa de conductores</li>
+                            <li><i class="fas fa-check"></i> Delitos de tránsito</li>
+                        </ul>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="text-success fw-bold"><i class="fas fa-circle me-1 small"></i> En línea</span>
+                            <span class="text-muted small">Respuesta: 5 min</span>
+                        </div>
+                        <button class="whatsapp-btn-large" onclick="openWhatsAppModal('Accidentes Barinas')">
+                            <i class="fab fa-whatsapp"></i> Contactar Abogado
+                        </button>
+                        <a href="/servicios/accidentes-de-transito" class="d-block text-center mt-2 small">Ver especialidad <i class="fas fa-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Abogado 6: Mercantil -->
+            <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+                <div class="abogado-card">
+                    <div class="abogado-header">
+                        <span class="abogado-verified"><i class="fas fa-check-circle me-1"></i> Verificado</span>
+                        <div class="abogado-avatar" style="background: #1abc9c;">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h4 class="mb-1">Derecho Mercantil</h4>
+                        <small>Barinas, Venezuela</small>
+                    </div>
+                    <div class="abogado-body">
+                        <ul class="especialidad-list">
+                            <li><i class="fas fa-check"></i> Constitución de empresas</li>
+                            <li><i class="fas fa-check"></i> Contratos comerciales</li>
+                            <li><i class="fas fa-check"></i> Cobro de deudas</li>
+                            <li><i class="fas fa-check"></i> Propiedad intelectual</li>
+                            <li><i class="fas fa-check"></i> Firmas personales</li>
+                        </ul>
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="text-success fw-bold"><i class="fas fa-circle me-1 small"></i> En línea</span>
+                            <span class="text-muted small">Respuesta: 10 min</span>
+                        </div>
+                        <button class="whatsapp-btn-large" onclick="openWhatsAppModal('Derecho Mercantil Barinas')">
+                            <i class="fab fa-whatsapp"></i> Contactar Abogado
+                        </button>
+                        <a href="/servicios/derecho-mercantil" class="d-block text-center mt-2 small">Ver especialidad <i class="fas fa-arrow-right ms-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- GUÍA LEGAL COMPLETA -->
+<section id="guia-legal" class="guia-section">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">¿Qué es un Abogado y cómo protege tus derechos?</h2>
+        <p class="text-center text-muted mb-5" data-aos="fade-up">El mundo de las leyes puede parecer un laberinto. Entender la figura del abogado es el primer paso para resolver cualquier conflicto legal con éxito.</p>
+        
+        <div class="row">
+            <!-- Columna Izquierda -->
+            <div class="col-lg-8 mb-4">
+                
+                <div class="mb-5" data-aos="fade-right">
+                    <h3 class="h4 fw-bold mb-3" style="color: var(--primary);">Definición de Abogado: Más que un profesional del Derecho</h3>
+                    <p class="text-justify">
+                        Un abogado es un jurista profesional que cuenta con la autorización estatal para ejercer el derecho. Su función principal es ofrecer asesoría jurídica y dirigir la defensa técnica de una de las partes en procesos judiciales o administrativos. A diferencia de un buscador de internet, un abogado no solo ofrece información; aplica la lógica, la jurisprudencia y la estrategia para encontrar la solución más favorable a un caso particular.
+                    </p>
+                    <p class="text-justify">
+                        Es, por definición, un colaborador indispensable de la justicia que actúa bajo el principio de secreto profesional.
+                    </p>
+                </div>
+
+                <div class="mb-5" data-aos="fade-right" data-aos-delay="100">
+                    <h3 class="h4 fw-bold mb-3" style="color: var(--primary);">¿Qué tipo de casos puede resolver un abogado?</h3>
+                    <p>La abogacía es amplia, y contar con un especialista puede marcar la diferencia entre ganar o perder un litigio. Estas son las áreas principales:</p>
+                    
+                    <div class="accordion" id="accordionCases">
+                        <div class="accordion-item border-0 mb-2 shadow-sm">
+                            <h2 class="accordion-header" id="headingFamily">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFamily" aria-expanded="true">
+                                    <i class="fas fa-users me-2 text-danger"></i> Conflictos de Familia y Sucesiones
+                                </button>
+                            </h2>
+                            <div id="collapseFamily" class="accordion-collapse collapse show" aria-labelledby="headingFamily" data-bs-parent="#accordionCases">
+                                <div class="accordion-body">
+                                    Resolución de divorcios, redacción de capitulaciones matrimoniales, gestión de herencias, testamentos y regímenes de custodia de menores.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item border-0 mb-2 shadow-sm">
+                            <h2 class="accordion-header" id="headingCivil">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCivil">
+                                    <i class="fas fa-file-contract me-2 text-primary"></i> Asuntos Civiles y Contratos
+                                </button>
+                            </h2>
+                            <div id="collapseCivil" class="accordion-collapse collapse" aria-labelledby="headingCivil" data-bs-parent="#accordionCases">
+                                <div class="accordion-body">
+                                    Desde la redacción de un contrato de alquiler hasta demandas por incumplimiento de pagos, protección de la propiedad y reclamaciones de daños y perjuicios.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item border-0 mb-2 shadow-sm">
+                            <h2 class="accordion-header" id="headingPenal">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePenal">
+                                    <i class="fas fa-gavel me-2 text-warning"></i> Defensa Penal
+                                </button>
+                            </h2>
+                            <div id="collapsePenal" class="accordion-collapse collapse" aria-labelledby="headingPenal" data-bs-parent="#accordionCases">
+                                <div class="accordion-body">
+                                    Representación ante delitos y faltas. El abogado garantiza que se respete el debido proceso y los derechos fundamentales del ciudadano frente al poder del Estado.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item border-0 shadow-sm">
+                            <h2 class="accordion-header" id="headingLaboral">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLaboral">
+                                    <i class="fas fa-briefcase me-2 text-success"></i> Derecho Laboral y Mercantil
+                                </button>
+                            </h2>
+                            <div id="collapseLaboral" class="accordion-collapse collapse" aria-labelledby="headingLaboral" data-bs-parent="#accordionCases">
+                                <div class="accordion-body">
+                                    Gestión de despidos, accidentes de trabajo, creación de empresas, registro de marcas y defensa de intereses corporativos.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tabla de Especialidades -->
+                <div class="mb-4" data-aos="fade-up">
+                    <h4 class="h5 fw-bold mb-3 text-secondary">Especialidades y Casos Comunes en Barinas</h4>
+                    <div class="table-responsive">
+                        <table class="table table-hover table-bordered align-middle">
+                            <thead class="table-primary">
+                                <tr>
+                                    <th>Rama del Derecho</th>
+                                    <th>Casos Comunes en Barinas</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="fw-bold">Derecho Civil</td>
+                                    <td>Divorcios, herencias, títulos supletorios y contratos de arrendamiento.</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">Derecho Mercantil</td>
+                                    <td>Constitución de firmas personales, Pymes, actas de asamblea y registros de marca.</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">Derecho Agrario</td>
+                                    <td>Regularización de tierras ante el INTI, conflictos de linderos y vialidad rural.</td>
+                                </tr>
+                                <tr>
+                                    <td class="fw-bold">Derecho Penal</td>
+                                    <td>Defensa en audiencias de presentación, medidas cautelares y recursos de apelación.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="alert alert-light border-start border-4 border-primary shadow-sm mt-4" data-aos="fade-up">
+                    <h5 class="alert-heading fw-bold text-dark">De la información a la acción: ¿Necesitas asesoría legal?</h5>
+                    <p class="mb-2 text-muted">Entender el concepto de abogado es útil, pero la ley no se lee, se aplica. Un error en una coma de un contrato o un plazo vencido en una demanda puede tener consecuencias financieras graves.</p>
+                    <hr>
+                    <p class="mb-0 small">Si has llegado hasta aquí buscando información, es probable que tengas un problema que requiere una solución profesional. No dejes tu futuro al azar.</p>
+                </div>
+
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <div class="sticky-top" style="top: 100px; z-index: 1;">
+                    <div class="card shadow-sm border-0 bg-light" data-aos="fade-left">
+                        <div class="card-body p-4">
+                            <h4 class="text-uppercase fw-bold mb-4" style="color: var(--accent); letter-spacing: 1px; font-size: 1rem;">Preguntas Frecuentes</h4>
+                            
+                            <div class="mb-3 border-bottom pb-2">
+                                <button class="btn btn-link text-dark fw-bold p-0 text-start text-decoration-none w-100" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    ¿Es lo mismo un abogado que un "Doctor"?
+                                </button>
+                                <div class="collapse mt-2" id="faq1">
+                                    <p class="small text-muted">En muchos países de Latinoamérica (como Venezuela, Argentina o Colombia), se usa el título de "Doctor" por cortesía y tradición histórica, aunque el grado académico sea de Licenciado en Derecho o Abogado.</p>
+                                </div>
+                            </div>
+
+                            <div class="mb-3 border-bottom pb-2">
+                                <button class="btn btn-link text-dark fw-bold p-0 text-start text-decoration-none w-100" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    ¿Cuándo es obligatorio contratar a uno?
+                                </button>
+                                <div class="collapse mt-2" id="faq2">
+                                    <p class="small text-muted">En la mayoría de los juicios y ante registros públicos, la ley exige la firma de un abogado para validar los documentos. Su labor más valiosa es la preventiva: consultar antes de firmar un contrato te ahorra años de pleitos.</p>
+                                </div>
+                            </div>
+
+                            <div class="mb-3 border-bottom pb-2">
+                                <button class="btn btn-link text-dark fw-bold p-0 text-start text-decoration-none w-100" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    ¿Qué garantiza el Secreto Profesional?
+                                </button>
+                                <div class="collapse mt-2" id="faq3">
+                                    <p class="small text-muted">Garantiza que todo lo que hables con tu abogado es confidencial. Esto permite que el cliente sea 100% honesto para que la estrategia de defensa sea sólida.</p>
+                                </div>
+                            </div>
+
+                            <div class="mb-3 border-bottom pb-2">
+                                <button class="btn btn-link text-dark fw-bold p-0 text-start text-decoration-none w-100" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    ¿Qué es el visado de un documento?
+                                </button>
+                                <div class="collapse mt-2" id="faq4">
+                                    <p class="small text-muted">Es la firma y sello de un abogado que certifica que el documento cumple con las leyes venezolanas. Sin visado, las Notarías y Registros de Barinas no procesarán tu trámite.</p>
+                                </div>
+                            </div>
+
+                            <!-- CTA Sidebar -->
+                            <div class="mt-4 p-3 text-center text-white rounded" style="background: var(--primary);">
+                                <h5 class="mb-2">¿Tienes un caso activo?</h5>
+                                <p class="small opacity-75 mb-3">No esperes a que el problema crezca. La primera consulta puede salvar tu caso.</p>
+                                <button onclick="openWhatsAppModal('consulta sidebar')" class="btn w-100 fw-bold text-dark" style="background: var(--accent);">
+                                    <i class="fab fa-whatsapp me-2"></i>Solicitar Presupuesto
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- DIRECTORIO DESPLEGABLE ESPECIALIDADES -->
+<section id="servicios" class="directorio-section">
+    <div style="max-width: 1000px; margin: auto;">
+        
+        <div class="text-center mb-5">
+            <h2 class="section-title" data-aos="fade-up">Directorio Especializado de Servicios Legales en Barinas</h2>
+            <p class="text-muted" data-aos="fade-up">Haz clic en cada categoría para conocer las definiciones legales y cómo podemos ayudarte.</p>
+        </div>
+
+        <div data-aos="fade-up" data-aos-delay="100">
+            <details>
+                <summary>
+                    <span>⚖️ Derecho Civil y Familiar</span>
+                    <span style="font-size: 1rem; color: var(--accent);">[Ver Especialidades]</span>
+                </summary>
+                <div>
+                    <div class="mb-3">
+                        <strong>• Divorcios y Separaciones:</strong> Proceso legal para la disolución del vínculo matrimonial, incluyendo la liquidación de la comunidad de gananciales y acuerdos de manutención.
+                    </div>
+                    <div class="mb-3">
+                        <strong>• Títulos Supletorios:</strong> Documento legal que acredita la propiedad de las bienhechurías construidas sobre un terreno ajeno o propio, esencial para trámites notariales en Barinas.
+                    </div>
+                    <div class="mb-3">
+                        <strong>• Herencias y Sucesiones:</strong> Trámite ante el SENIAT y tribunales para la transmisión de bienes, derechos y obligaciones de una persona fallecida a sus herederos.
+                    </div>
+                    <div class="mb-3">
+                        <strong>• Redacción de Contratos:</strong> Elaboración técnica de documentos de arrendamiento, compraventa y donación bajo las leyes civiles venezolanas.
+                    </div>
+                    <button onclick="openWhatsAppModal('Derecho Civil y Familiar')" class="btn text-white" style="background: var(--primary);">
+                        <i class="fab fa-whatsapp me-2"></i>Consultar Abogado Civil
+                    </button>
+                    <a href="/servicios/derecho-civil" class="btn btn-link">Ver página completa</a>
+                </div>
+            </details>
+
+            <details>
+                <summary>
+                    <span>🏢 Derecho Mercantil y Corporativo</span>
+                    <span style="font-size: 1rem; color: var(--accent);">[Ver Especialidades]</span>
+                </summary>
+                <div>
+                    <div class="mb-3">
+                        <strong>• Registro de Empresas (Pymes):</strong> Constitución legal de sociedades mercantiles ante el Registro Mercantil de Barinas, definiendo el objeto social y capital suscrito.
+                    </div>
+                    <div class="mb-3">
+                        <strong>• Actas de Asamblea:</strong> Documentos obligatorios para registrar cambios en la junta directiva, aumentos de capital o venta de acciones en una empresa.
+                    </div>
+                    <div class="mb-3">
+                        <strong>• Firmas Personales:</strong> Figura jurídica que permite a una persona natural realizar actividades comerciales bajo un nombre comercial propio.
+                    </div>
+                    <div class="mb-3">
+                        <strong>• Marcas y Patentes:</strong> Protección de la propiedad intelectual y nombres comerciales ante el SAPI para asegurar la exclusividad de tu negocio.
+                    </div>
+                    <button onclick="openWhatsAppModal('Derecho Mercantil')" class="btn text-white" style="background: var(--primary);">
+                        <i class="fab fa-whatsapp me-2"></i>Solicitar Registro Mercantil
+                    </button>
+                    <a href="/servicios/derecho-mercantil" class="btn btn-link">Ver página completa</a>
+                </div>
+            </details>
+
+            <details>
+                <summary>
+                    <span>🚜 Derecho Agrario y Tierras</span>
+                    <span style="font-size: 1rem; color: var(--accent);">[Ver Especialidades]</span>
+                </summary>
+                <div>
+                    <div class="mb-3">
+                        <strong>• Regularización ante el INTI:</strong> Trámites para la obtención de Títulos de Adjudicación de Tierras y Certificados de Finca Productiva en el estado Barinas.
+                    </div>
+                    <div class="mb-3">
+                        <strong>• Conflictos de Linderos:</strong> Resolución judicial o mediación en disputas por límites territoriales entre fundos y fincas rurales.
+                    </div>
+                    <div class="mb-3">
+                        <strong>• Vialidad y Servidumbre:</strong> Acuerdos legales para permitir el paso o acceso a servicios básicos a través de terrenos colindantes.
+                    </div>
+                    <button onclick="openWhatsAppModal('Derecho Agrario')" class="btn text-white" style="background: var(--primary);">
+                        <i class="fab fa-whatsapp me-2"></i>Consultar Experto Agrario
+                    </button>
+                    <a href="/servicios/derecho-agrario" class="btn btn-link">Ver página completa</a>
+                </div>
+            </details>
+
+            <details>
+                <summary>
+                    <span>🛡️ Derecho Penal y Procesal</span>
+                    <span style="font-size: 1rem; color: var(--accent);">[Ver Especialidades]</span>
+                </summary>
+                <div>
+                    <div class="mb-3">
+                        <strong>• Asistencia en Audiencias:</strong> Representación legal inmediata desde la audiencia de presentación ante los tribunales de control en Barinas.
+                    </div>
+                    <div class="mb-3">
+                        <strong>• Recursos de Apelación:</strong> Impugnación de decisiones judiciales ante las cortes superiores para garantizar la justicia en el proceso.
+                    </div>
+                    <div class="mb-3">
+                        <strong>• Estafas y Fraudes:</strong> Defensa y acusación en delitos contra el patrimonio, muy comunes en transacciones comerciales mal ejecutadas.
+                    </div>
+                    <button onclick="openWhatsAppModal('Emergencia Penal')" class="btn btn-danger">
+                        <i class="fab fa-whatsapp me-2"></i>Emergencia Penal 24/7
+                    </button>
+                    <a href="/servicios/derecho-penal" class="btn btn-link">Ver página completa</a>
+                </div>
+            </details>
+
+            <details>
+                <summary>
+                    <span>📄 Concepto y Tipos de Documentos Legales</span>
+                    <span style="font-size: 1rem; color: var(--accent);">[Ver Definición]</span>
+                </summary>
+                <div>
+                    <p class="mb-3">
+                        <strong>Definición:</strong> Los documentos legales son escritos formales que acreditan hechos, garantizan derechos, generan obligaciones y constituyen relaciones contractuales con validez jurídica. Sirven como prueba fehaciente ante autoridades, empresas o personas, incluyendo contratos, escrituras, actas de nacimiento, identificaciones y poderes.
+                    </p>
+                    
+                    <h6 class="fw-bold text-primary mb-2">Tipos Comunes:</h6>
+                    <ul class="mb-3">
+                        <li><strong>Identificación Personal:</strong> Acta de nacimiento, credencial de elector, pasaporte, licencia de conducir.</li>
+                        <li><strong>Identidad Profesional:</strong> Título profesional, cédula profesional, certificados de estudio.</li>
+                        <li><strong>Contratos:</strong> Contratos de trabajo, arrendamiento, compraventa y acuerdos de servicio.</li>
+                        <li><strong>Propiedad:</strong> Escrituras de propiedad, testamentos, actas de matrimonio.</li>
+                        <li><strong>Administrativos:</strong> Poder notarial, declaraciones juradas, licencias, registros mercantiles.</li>
+                    </ul>
+
+                    <h6 class="fw-bold text-primary mb-2">Características Clave:</h6>
+                    <ul class="mb-3">
+                        <li><strong>Validez Jurídica:</strong> Certifican actos ante la ley.</li>
+                        <li><strong>Seguridad:</strong> Aportan garantía a las partes firmantes.</li>
+                        <li><strong>Obligatoriedad:</strong> Establecen acuerdos exigibles ante un tribunal.</li>
+                        <li><strong>Formalidad:</strong> Requieren firma y a menudo intervención notarial.</li>
+                    </ul>
+                </div>
+            </details>
+
+            <details>
+                <summary>
+                    <span>📋 Guía de Trámites: SAREN y Notarías</span>
+                    <span style="font-size: 1rem; color: var(--accent);">[Ver Información]</span>
+                </summary>
+                <div>
+                    <p class="mb-3">
+                        Los trámites legales en Barinas se gestionan principalmente a través del <strong>SAREN</strong> (Servicio Autónomo de Registros y Notarías). Los documentos se legalizan y apostillan en línea, mientras que poderes y compraventas requieren cita previa.
+                    </p>
+                    
+                    <h6 class="fw-bold text-primary mb-2">Principales Trámites:</h6>
+                    <ul class="mb-3">
+                        <li><strong>Registros y Notarías:</strong> Protocolización de compraventa de inmuebles, registro de empresas, autenticación de poderes.</li>
+                        <li><strong>Legalización:</strong> Actas de nacimiento, matrimonio o títulos universitarios certificados ante el SAREN.</li>
+                        <li><strong>Apostilla:</strong> Verificación de documentos para validez internacional.</li>
+                    </ul>
+
+                    <h6 class="fw-bold text-primary mb-2">Pasos Clave:</h6>
+                    <ul class="mb-3">
+                        <li>Solicitar cita a través del portal del SAREN.</li>
+                        <li>Pagar tasas según el servicio requerido.</li>
+                        <li>Presentar cédula y documentos originales.</li>
+                    </ul>
+                    
+                    <a href="https://www.saren.gob.ve/" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm me-2">
+                        <i class="fas fa-external-link-alt me-2"></i>Ir a SAREN
+                    </a>
+                    <button onclick="openWhatsAppModal('Tramite SAREN')" class="btn text-white" style="background: var(--primary);">
+                        <i class="fab fa-whatsapp me-2"></i>Ayuda con Trámite
+                    </button>
+                    <a href="/servicios/tramites-saren" class="btn btn-link">Ver página completa</a>
+                </div>
+            </details>
+
+            <details>
+                <summary>
+                    <span>🚗 Licencia de Conducir (INTT)</span>
+                    <span style="font-size: 1rem; color: var(--accent);">[Ver Requisitos]</span>
+                </summary>
+                <div>
+                    <p class="mb-3">
+                        La licencia de conducir en Barinas se tramita a través del <strong>INTT</strong> (Instituto Nacional de Transporte Terrestre), permitiendo renovaciones en línea y registros originales con examen teórico/práctico.
+                    </p>
+                    
+                    <h6 class="fw-bold text-primary mb-2">Información Clave:</h6>
+                    <ul class="mb-3">
+                        <li><strong>Proceso:</strong> Ingresar al portal oficial para obtener planilla única y pagar en línea.</li>
+                        <li><strong>Recaudos:</strong> Cédula vigente, certificado médico vial, comprobante de pago.</li>
+                        <li><strong>Oficinas:</strong> INTT Barinas y operativos en Terminal de Pasajeros.</li>
+                        <li><strong>Tipos:</strong> 2do (motos), 3ero, 4to y 5to grado.</li>
+                    </ul>
+
+                    <a href="https://www.intt.gob.ve/" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm me-2">
+                        <i class="fas fa-external-link-alt me-2"></i>Portal INTT
+                    </a>
+                    <button onclick="openWhatsAppModal('Licencia INTT')" class="btn text-white" style="background: var(--primary);">
+                        <i class="fab fa-whatsapp me-2"></i>Asesoría INTT
+                    </button>
+                </div>
+            </details>
+        </div>
+
+        <div class="text-center mt-4 pt-3 border-top">
+            <p class="small text-muted">
+                Cobertura: <strong>los 12 municipios del estado Barinas</strong> (<a href="/municipios/">ver municipios</a>).<br>
+                Nuestro directorio se actualiza según las normativas del Circuito Judicial de Barinas.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- SECCIÓN DESTACADA: Documentos para el Exterior -->
+<section class="py-5 bg-white">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="card shadow-lg border-0 overflow-hidden" data-aos="zoom-in">
+                    <div class="card-header text-white p-4" style="background: var(--primary);">
+                        <h3 class="mb-0"><i class="fas fa-globe-americas me-2"></i> Documentos en Barinas para el Exterior</h3>
+                        <small class="opacity-75">Copia Certificada vs. Legalización</small>
+                    </div>
+                    <div class="card-body p-4 p-md-5">
+                        <p class="lead">Si eres uno de los tantos venezolanos en el extranjero o estás planeando tu proceso de inmigración, entender la burocracia documental es vital. Aquí te explicamos la diferencia técnica para que ahorres tiempo y dinero.</p>
+                        
+                        <div class="row mb-4 mt-4">
+                            <div class="col-md-6 mb-3">
+                                <div class="p-4 rounded h-100" style="background: rgba(26, 35, 126, 0.05);">
+                                    <h5 class="fw-bold text-primary mb-3">📌 Copia Certificada (Uso Nacional)</h5>
+                                    <p>Es el proceso donde una autoridad (notario o registro civil) da fe de que una reproducción es idéntica al original.</p>
+                                    <ul class="list-unstyled small">
+                                        <li><i class="fas fa-check text-success me-2"></i> <strong>Función:</strong> Garantiza que la copia es fiel al original.</li>
+                                        <li><i class="fas fa-check text-success me-2"></i> <strong>Uso:</strong> Trámites internos en Venezuela.</li>
+                                        <li><i class="fas fa-check text-success me-2"></i> <strong>Formato:</strong> Una firma y sello de la oficina.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="p-4 rounded h-100" style="background: rgba(197, 160, 89, 0.1);">
+                                    <h5 class="fw-bold mb-3" style="color: var(--accent);">📌 Documento Legalizado (Internacional)</h5>
+                                    <p>La legalización (o apostilla) autentica la firma y sello de la autoridad para reconocimiento internacional.</p>
+                                    <ul class="list-unstyled small">
+                                        <li><i class="fas fa-globe text-primary me-2"></i> <strong>Función:</strong> Valida la firma del funcionario.</li>
+                                        <li><i class="fas fa-globe text-primary me-2"></i> <strong>Uso:</strong> Residencia, matrimonios internacionales.</li>
+                                        <li><i class="fas fa-globe text-primary me-2"></i> <strong>Formato:</strong> Cadena de firmas y legalización.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="alert alert-primary border-0">
+                            <h5 class="alert-heading"><i class="fas fa-hand-holding-heart me-2"></i> ¿Cómo te ayudamos desde Barinas?</h5>
+                            <p class="mb-0">Gestionamos desde la obtención de partidas de nacimiento, actas de matrimonio o sentencias de divorcio, hasta su certificación y legalización ante el SAREN. Somos el puente entre tus necesidades en Venezuela y tu vida en el exterior.</p>
+                        </div>
+
+                        <div class="text-center mt-4">
+                            <a href="/servicios/legalizacion-apostilla" class="btn btn-lg btn-outline-primary me-2 mb-2">Legalización y apostilla</a>
+                            <button onclick="openWhatsAppModal('documentos exterior')" class="btn btn-lg text-white" style="background: var(--primary);">
+                                <i class="fab fa-whatsapp me-2"></i> Consultar Trámites para el Exterior
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ SECTION -->
+<section id="faq" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Preguntas Frecuentes</h2>
+        <p class="text-center mb-5">Resolvemos las dudas más comunes sobre trámites legales en Barinas</p>
+        
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="accordion" id="faqAccordion">
+                    
+                    <div class="accordion-item border-0 mb-3 shadow-sm" data-aos="fade-up">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqDivorcio">
+                                ¿Cómo realizar un divorcio express o de mutuo acuerdo en Barinas?
+                            </button>
+                        </h2>
+                        <div id="faqDivorcio" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                El <strong>divorcio de mutuo acuerdo</strong> es el más rápido y económico. Ambas partes deben estar de acuerdo en la separación de bienes y custodia. Te asesoramos para redactar el convenio y presentarlo ante el tribunal de Barinas, agilizando el proceso al máximo.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item border-0 mb-3 shadow-sm" data-aos="fade-up" data-aos-delay="100">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqSaren">
+                                ¿Qué trámites puedo realizar por SAREN en línea desde Barinas?
+                            </button>
+                        </h2>
+                        <div id="faqSaren" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                A través del <strong>SAREN en línea</strong> puedes solicitar partidas de nacimiento, matrimonio y defunción, así como legalizaciones. Si estás en el exterior, podemos realizar estos trámites por ti y enviarte los documentos digitalizados o físicos a cualquier país.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item border-0 mb-3 shadow-sm" data-aos="fade-up" data-aos-delay="200">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqAccidente">
+                                ¿Qué debo hacer si sufro un accidente de tránsito en Barinas?
+                            </button>
+                        </h2>
+                        <div id="faqAccidente" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Primero asegura tu salud y denuncia el hecho ante las autoridades. Como <strong>abogados de accidentes</strong>, recomendamos no firmar acuerdos sin asesoría previa. Nos encargamos de reclamar la indemnización por daños materiales y lesiones personales a las aseguradoras.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item border-0 mb-3 shadow-sm" data-aos="fade-up" data-aos-delay="300">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqLaboral">
+                                ¿Tengo derecho a cobrar prestaciones si me despiden en Barinas?
+                            </button>
+                        </h2>
+                        <div id="faqLaboral" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Sí, según la LOTTT, todo trabajador tiene derecho al cobro de prestaciones sociales, vacaciones fraccionadas y utilidades. Nuestros <strong>abogados laborales</strong> calculan tu liquidación exacta y la reclaman si la empresa se niega a pagar.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item border-0 shadow-sm" data-aos="fade-up" data-aos-delay="400">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faqHerencia">
+                                ¿Cuánto tiempo tarda un trámite de herencia en Barinas?
+                            </button>
+                        </h2>
+                        <div id="faqHerencia" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                El tiempo varía si hay testamento o no (sucesión testada/intestada). También depende del acuerdo entre herederos. En promedio, una sucesión puede tardar varios meses. Agilizamos el proceso gestionando la declaratoria de herederos ante los tribunales de Barinas.
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA FINAL CON IMAGEN DE CONTACTO -->
+<section class="cta-section">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7 text-center text-lg-start" data-aos="fade-right">
+                <h2 class="mb-4">¿Buscas un abogado específico en Barinas?</h2>
+                <p class="lead mb-4">
+                    Si no encuentras la especialidad que necesitas, contáctanos directamente.<br>
+                    Tenemos acceso a la red más grande de abogados en el estado Barinas.
+                </p>
+                <button class="btn btn-lg fw-bold px-5" onclick="openWhatsAppModal('consulta general landing')" style="background: var(--accent); color: var(--primary);">
+                    <i class="fab fa-whatsapp me-2"></i> Hablar con un Asesor Ahora
+                </button>
+                <p class="mt-3 mb-0 opacity-75">
+                    <i class="fas fa-phone me-2"></i> También puedes llamar al: <strong>{{TEL}}</strong>
+                </p>
+            </div>
+            <div class="col-lg-5 text-center mt-4 mt-lg-0" data-aos="fade-left">
+                <!-- IMAGEN DE CONTACTO AGREGADA AQUÍ -->
+                <img src="/images/abogados-en-barinas.jpg" alt="Abogados en Barinas: trámites legales, notaría, registro y tribunales" loading="lazy" width="498" height="332" class="img-fluid rounded shadow border border-3 border-white">
+            </div>
+        </div>
+    </div>
+</section>
