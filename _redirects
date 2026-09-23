@@ -1,0 +1,8 @@
+# Cloudflare Pages ya elimina ".html" y redirige /index.html a /.
+# Alias en español para las páginas institucionales:
+/nosotros                /quienes-somos           301
+/quienes_somos           /quienes-somos           301
+/contactanos             /contacto                301
+/privacidad              /politica-de-privacidad  301
+/politica-privacidad     /politica-de-privacidad  301
+/aviso-legal             /politica-de-privacidad  301
