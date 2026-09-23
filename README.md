@@ -8,6 +8,8 @@ generados a mano: cambia el script (o `src/home.html`) y vuelve a ejecutarlo.
 
 ## Datos del negocio
 
+Este repositorio es independiente: no comparte imágenes, Analytics ni código con ningún otro sitio.
+
 Viven en **un solo lugar**: el diccionario `NEGOCIO` de `tools/build_site.py`. Todo lo publicado (páginas, pie,
 schema, mensajes de WhatsApp) sale de ahí.
 
@@ -20,8 +22,8 @@ schema, mensajes de WhatsApp) sale de ahí.
 | Horario | Atención 24/7 por WhatsApp |
 | Año de inicio | 2024 → copyright «© 2024–{año actual}» |
 | Redes sociales | Ninguna (no se muestran íconos ni `sameAs`) |
-| Código de WhatsApp | `b33` (abogadosvalencia.pages.dev usa `g33`) |
-| Google Analytics | `G-RFW5F7YBBR` (vacío = sin Analytics) |
+| Código de WhatsApp | `b33` |
+| Google Analytics | Sin configurar: `ga_id` vacío hasta tener una propiedad propia de este sitio |
 
 > El negocio **no** tiene ficha de Google Business: el sitio no enlaza a Google Maps ni muestra opiniones o
 > calificaciones, y el schema no usa `aggregateRating` ni `Review` (el script lo valida).
@@ -51,7 +53,8 @@ node tools/test_whatsapp.js           # prueba en Chromium (Playwright) los mens
   páginas huérfanas; `robots.txt` apunta al sitemap; no hay HTML sin generar.
 - Ninguna landing menciona otro municipio y ninguna es una copia de otra (similitud < 75 %).
 - Teléfono, horario y copyright idénticos en todas las páginas; ningún otro número de teléfono.
-- Ninguna mención ni enlace a Google Maps u opiniones de Google, ni al dominio abogadosvalencia.
+- Ninguna mención ni enlace a Google Maps u opiniones de Google, ni referencias a otros sitios `*.pages.dev`;
+  imágenes y recursos de `style.css` alojados en este repositorio.
 - Botón «Reservar cita por WhatsApp» y bloque «Trámites SAREN en línea» presentes en todas las páginas.
 
 ## Estructura

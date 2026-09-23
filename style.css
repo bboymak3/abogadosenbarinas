@@ -180,7 +180,7 @@ body {
     right: 0;
     bottom: 0;
     /* URL DE LA IMAGEN DE BANNER */
-    background-image: url('https://abogadosvalencia.pages.dev/images/abogados-en-barinas-tramines-legales-abogado-notaria-registro-tribunales.jpg');
+    background-image: url('/images/abogados-en-barinas.jpg');
     background-size: cover;
     background-position: center;
     opacity: 0.2; /* Oscuridad para que el texto se lea bien */

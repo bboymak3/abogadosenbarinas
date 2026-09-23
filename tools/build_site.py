@@ -35,8 +35,7 @@ NEGOCIO = {
     "telefono": "0416-7775771",
     "telefono_e164": "+584167775771",
     "whatsapp": "584167775771",
-    # Código que se añade al final de todos los mensajes de WhatsApp de esta web
-    # (abogadosvalencia.pages.dev usa "g33").
+    # Código que se añade al final de todos los mensajes de WhatsApp de esta web.
     "codigo_whatsapp": "b33",
     # Sin oficina pública: negocio con área de servicio (no se publica address).
     "direccion": None,
@@ -52,8 +51,9 @@ NEGOCIO = {
     "anio_inicio": 2024,
     # URLs de redes sociales reales. Vacío = no se muestran íconos ni sameAs.
     "redes": {},
-    # Google Analytics. Cadena vacía = sin Analytics.
-    "ga_id": "G-RFW5F7YBBR",
+    # Google Analytics: ID de una propiedad PROPIA de este sitio (G-XXXXXXX).
+    # Cadena vacía = sin Analytics (y la política de privacidad no menciona cookies de analítica).
+    "ga_id": "",
     "imagen": "/images/abogados-en-barinas.jpg",
     "imagen_ancho": 498,
     "imagen_alto": 332,
@@ -1136,13 +1136,13 @@ def pagina_privacidad(fecha):
                     <ul>
                         <li><strong>Abogados de la red del directorio</strong>, solo cuando pides que te pongamos en contacto y solo la información necesaria para atender tu caso. Están obligados por el secreto profesional.</li>
                         <li><strong>WhatsApp (Meta Platforms)</strong>, como medio de comunicación, según sus propias condiciones.</li>
-                        <li><strong>Google</strong>, como proveedor de analítica web.</li>
+                        <li data-ga><strong>Google</strong>, como proveedor de analítica web.</li>
                         <li><strong>Cloudflare</strong>, como proveedor de alojamiento del sitio.</li>
                         <li>Autoridades competentes, solo cuando lo exija la ley.</li>
                     </ul>
 
                     <h2>6. Cookies</h2>
-                    <p>Usamos cookies de Google Analytics para obtener estadísticas de visitas. Puedes bloquearlas o eliminarlas desde tu navegador o instalar el <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">complemento de inhabilitación de Google Analytics</a>. El sitio funciona igual sin ellas.</p>
+                    <p data-ga>Usamos cookies de Google Analytics para obtener estadísticas de visitas. Puedes bloquearlas o eliminarlas desde tu navegador o instalar el <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">complemento de inhabilitación de Google Analytics</a>. El sitio funciona igual sin ellas.</p>
 
                     <h2>7. Conservación</h2>
                     <p>Las conversaciones se conservan el tiempo necesario para atender tu consulta y su seguimiento. Puedes pedir en cualquier momento que borremos tu historial.</p>
@@ -1167,6 +1167,12 @@ def pagina_privacidad(fecha):
                          tel=NEGOCIO["telefono"], tel_e164=NEGOCIO["telefono_e164"], codigo=NEGOCIO["codigo_whatsapp"])
     if not NEGOCIO["ga_id"]:
         cuerpo = re.sub(r"\s*<li><strong>Datos de navegación</strong>.*?</li>", "", cuerpo, flags=re.S)
+        cuerpo = re.sub(r"\s*<li data-ga>.*?</li>", "", cuerpo, flags=re.S)
+        cuerpo = re.sub(r"<p data-ga>.*?</p>",
+                        "<p>Este sitio no usa cookies de analítica ni de publicidad.</p>", cuerpo, flags=re.S)
+        cuerpo = cuerpo.replace("                        <li>Medir el uso del sitio para mejorar sus contenidos.</li>\n", "")
+    else:
+        cuerpo = cuerpo.replace("<li data-ga>", "<li>").replace("<p data-ga>", "<p>")
     return {
         "path": "/politica-de-privacidad", "salida": "politica-de-privacidad.html",
         "titulo": "Política de Privacidad y Tratamiento de Datos | " + NEGOCIO["nombre"],
@@ -1411,7 +1417,7 @@ class Analizador(HTMLParser):
 
 PROHIBIDO = re.compile(
     r"google\.[a-z.]+/maps|maps\.google|goo\.gl/maps|maps\.app\.goo\.gl|g\.page/|google\s+maps|"
-    r"opiniones\s+(?:de|en)\s+google|rese[ñn]as\s+(?:de|en)\s+google|aggregateRating|\"Review\"|abogadosvalencia",
+    r"opiniones\s+(?:de|en)\s+google|rese[ñn]as\s+(?:de|en)\s+google|aggregateRating|\"Review\"",
     re.I)
 TELEFONO = re.compile(r"(?<!\d)(?:\+?58[\s-]?)?0?4(?:12|14|16|24|26)[\s-]?\d{3}[\s-]?\d{4}(?!\d)")
 
@@ -1443,6 +1449,21 @@ def validar(pags, generados, fecha):
                     errores.append("{}: HTML no generado por el script (huérfano)".format(rel))
     if os.path.exists(os.path.join(ROOT, ".htaccess.txt")):
         errores.append(".htaccess.txt: no se usa en Cloudflare Pages; elimínalo")
+
+    # Recursos solo de este repositorio o de los CDN permitidos; ningún otro *.pages.dev
+    propio = urlparse(NEGOCIO["dominio"]).netloc
+    ajeno = re.compile(r"https?://(?!{})[\w.-]+\.pages\.dev".format(re.escape(propio)))
+    with open(os.path.join(ROOT, "style.css"), encoding="utf-8") as f:
+        css = f.read()
+    for u in re.findall(r"url\(['\"]?([^'\")]+)", css):
+        if not u.startswith(("/", "data:")):
+            errores.append("style.css: recurso externo {}".format(u))
+        elif u.startswith("/") and not os.path.isfile(os.path.join(ROOT, u.lstrip("/"))):
+            errores.append("style.css: recurso inexistente {}".format(u))
+    for rel, contenido in list(generados.items()) + [("style.css", css)]:
+        m_aj = ajeno.search(contenido)
+        if m_aj:
+            errores.append("{}: referencia a otro sitio {}".format(rel, m_aj.group(0)))
 
     ids_por_archivo = {}
     analisis = {}
@@ -1488,6 +1509,8 @@ def validar(pags, generados, fecha):
 
         # Enlaces internos, recursos y WhatsApp
         for tag, attr, valor in an.enlaces:
+            if tag == "img" and not valor.startswith("/"):
+                errores.append("{}: imagen alojada fuera del repositorio {}".format(salida, valor))
             if "wa.me/" in valor or "api.whatsapp.com" in valor:
                 u = urlparse(valor)
                 if u.path.strip("/") != NEGOCIO["whatsapp"]:
