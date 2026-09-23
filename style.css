@@ -933,3 +933,62 @@ img {
 @media (max-width: 768px) {
     .page-hero h1 { font-size: 1.8rem; }
 }
+
+/* Bloque Trámites SAREN en línea (todas las páginas) */
+.saren-block {
+    background: rgba(26, 35, 126, 0.06);
+    border-top: 4px solid var(--accent);
+}
+
+.saren-block h2 {
+    color: var(--primary);
+}
+
+/* Bloque de contacto (todas las páginas) */
+.contact-block {
+    background: var(--light);
+}
+
+/* Tarjetas enlazadas: municipios y especialidades */
+.municipio-card {
+    display: block;
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    height: 100%;
+    color: var(--primary);
+    text-decoration: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border: 2px solid transparent;
+    transition: all 0.3s;
+}
+
+.municipio-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+    color: var(--primary);
+}
+
+.columnas-2 {
+    columns: 2;
+}
+
+@media (max-width: 576px) {
+    .columnas-2 { columns: 1; }
+}
+
+.lista-servicio li strong {
+    color: var(--primary);
+}
+
+.footer-legal a {
+    color: rgba(255,255,255,0.7);
+}
+
+.footer-legal a:hover {
+    color: var(--accent);
+}
+
+.footer-note {
+    color: rgba(255,255,255,0.6);
+}
