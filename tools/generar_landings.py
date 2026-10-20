@@ -194,7 +194,7 @@ def nav():
                 <a href="/">Inicio</a>
                 <a href="/saren-en-linea/">SAREN en línea</a>
                 <a href="/abogados/">Municipios</a>
-                <a class="ios-nav-cta" href="{wa('Hola, necesito un abogado en Barinas')}" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> {PHONE_DISPLAY}</a>
+                <a class="ios-nav-cta" aria-label="WhatsApp {PHONE_DISPLAY}" href="{wa('Hola, necesito un abogado en Barinas')}" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i><span class="ios-nav-num"> {PHONE_DISPLAY}</span></a>
             </nav>
         </div>
     </header>
@@ -244,7 +244,8 @@ def footer():
                     </ul>
                 </div>
             </div>
-            <div class="ios-footer-bottom">&copy; {datetime.date.today().year} Abogados en Barinas · Directorio Legal Especializado. La información de esta página es orientativa y no sustituye la asesoría de un abogado.</div>
+            <div class="ios-footer-bottom">&copy; {datetime.date.today().year} Abogados en Barinas · Directorio Legal Especializado. La información de esta página es orientativa y no sustituye la asesoría de un abogado.<br>
+                <span class="ios-credit">Página web desarrollada por <strong>Grupo 360 Soluciones</strong> · <a href="https://makeseo.app" target="_blank" rel="noopener">Diseño de páginas webs - SEO Local</a></span></div>
         </div>
     </footer>
 """
@@ -574,12 +575,12 @@ def pagina_municipio(idx, m):
     url = SITE + path
     nombre, capital, n = m["nombre"], m["capital"], len(m["parroquias"])
     lugar = f"el municipio {nombre}"
-    titulo = f"Abogados en {nombre} ({capital}), Barinas | SAREN en Línea y Trámites"
+    titulo = f"Abogado en {capital}, Municipio {nombre} | SAREN en Línea Barinas"
     if len(titulo) > 70:
-        titulo = f"Abogados en {capital}, Municipio {nombre} | SAREN en Línea"
-    desc = (f"Abogados en el municipio {nombre}, Barinas: trámites SAREN en línea, divorcios, herencias, "
+        titulo = f"Abogado en {capital}, Municipio {nombre} | Barinas"
+    desc = (f"Abogado en {capital}, municipio {nombre}, Barinas: trámites SAREN en línea, divorcios, herencias, "
             f"compraventas, laboral y penal en {capital} y sus {n} parroquias. Consulta gratis por WhatsApp {PHONE_DISPLAY}.")
-    keywords = (f"abogados en {nombre.lower()}, abogados {capital.lower()}, saren en línea {capital.lower()}, "
+    keywords = (f"abogado en {capital.lower()}, abogado en {nombre.lower()}, abogados {capital.lower()}, saren en línea {capital.lower()}, "
                 f"notaría {capital.lower()}, registro {capital.lower()}, divorcio {capital.lower()}, abogados barinas")
     crumbs = [("Inicio", "/"), ("Municipios", "/abogados/"), (f"Municipio {nombre}", path)]
     mensaje = f"Hola, necesito un abogado en el municipio {nombre} ({capital}), Barinas"
@@ -588,7 +589,7 @@ def pagina_municipio(idx, m):
     schema = {"@context": "https://schema.org", "@graph": [
         org_ref(),
         webpage_schema(url, titulo, desc),
-        legal_service_schema(url, f"Abogados en {nombre} ({capital}) - Abogados en Barinas", area(m), capital, desc),
+        legal_service_schema(url, f"Abogado en {capital}, Municipio {nombre} - Abogados en Barinas", area(m), capital, desc),
         saren_service_schema(url, f"el municipio {nombre}", area(m)),
         breadcrumb_schema(crumbs),
         faq_schema(faqs),
@@ -596,13 +597,13 @@ def pagina_municipio(idx, m):
     intro = INTRO_MUNICIPIO[idx % len(INTRO_MUNICIPIO)].format(m=nombre, capital=capital, n=n, zona=m["zona"])
 
     parroquias_li = "\n".join(
-        f'                    <li><a href="{path}{slugify(p)}/"><span>Abogados en {e(p)}</span><small>Parroquia</small></a></li>'
+        f'                    <li><a href="{path}{slugify(p)}/"><span>Abogado en {e(p)}</span><small>Parroquia</small></a></li>'
         for p in m["parroquias"]
     )
 
     body = hero(
         f"Municipio {nombre} · Estado Barinas",
-        f"Abogados en el municipio <span>{e(nombre)}</span>",
+        f"Abogado en <span>{e(capital)}</span>, Municipio {e(nombre)}",
         f"Trámites <strong>SAREN en línea</strong>, asesoría legal y defensa en {e(capital)} y sus {n} parroquias. Primera consulta gratis.",
         crumbs, mensaje,
         ["✓ SAREN en línea", "✓ Atención 24/7", "✓ Consulta gratis", f"✓ {n} parroquias"],
@@ -649,12 +650,14 @@ def pagina_parroquia(idx, m, p):
     path = f"/abogados/{ms}/{ps}/"
     url = SITE + path
     nombre, capital = m["nombre"], m["capital"]
-    titulo = f"Abogados en {p}, Municipio {nombre} | SAREN en Línea Barinas"
+    titulo = f"Abogado en {p}, Municipio {nombre} | SAREN en Línea Barinas"
     if len(titulo) > 70:
-        titulo = f"Abogados en {p}, Barinas | SAREN en Línea"
-    desc = (f"Abogados en la parroquia {p}, municipio {nombre}, Barinas. SAREN en línea, divorcios, herencias, "
+        titulo = f"Abogado en {p}, Municipio {nombre} | Barinas"
+    if len(titulo) > 70:
+        titulo = f"Abogado en {p}, Municipio {nombre}"
+    desc = (f"Abogado en {p}, municipio {nombre}: abogados en la parroquia {p}, municipio {nombre}, Barinas. SAREN en línea, divorcios, herencias, "
             f"compraventas, laboral, penal y agrario. Consulta gratis por WhatsApp {PHONE_DISPLAY}.")
-    keywords = (f"abogados en {p.lower()}, abogado {p.lower()} barinas, saren en línea {p.lower()}, "
+    keywords = (f"abogado en {p.lower()}, abogados en {p.lower()}, abogado {p.lower()} barinas, saren en línea {p.lower()}, "
                 f"notaría {capital.lower()}, abogados {nombre.lower()}, trámites legales {p.lower()}")
     crumbs = [("Inicio", "/"), ("Municipios", "/abogados/"), (f"Municipio {nombre}", f"/abogados/{ms}/"), (f"Parroquia {p}", path)]
     mensaje = f"Hola, necesito un abogado en la parroquia {p}, municipio {nombre}, Barinas"
@@ -663,7 +666,7 @@ def pagina_parroquia(idx, m, p):
     schema = {"@context": "https://schema.org", "@graph": [
         org_ref(),
         webpage_schema(url, titulo, desc),
-        legal_service_schema(url, f"Abogados en {p} ({nombre}) - Abogados en Barinas", area(m, p), capital, desc),
+        legal_service_schema(url, f"Abogado en {p}, Municipio {nombre} - Abogados en Barinas", area(m, p), capital, desc),
         saren_service_schema(url, f"la parroquia {p}", area(m, p)),
         breadcrumb_schema(crumbs),
         faq_schema(faqs),
@@ -686,7 +689,7 @@ def pagina_parroquia(idx, m, p):
 
     body = hero(
         f"Parroquia {p} · Municipio {nombre}",
-        f"Abogados en <span>{e(p)}</span>",
+        f"Abogado en <span>{e(p)}</span>, Municipio {e(nombre)}",
         f"Servicios legales y trámites <strong>SAREN en línea</strong> para la parroquia {e(p)}, municipio {e(nombre)}, estado Barinas.",
         crumbs, mensaje,
         ["✓ SAREN en línea", "✓ Respuesta en minutos", "✓ Consulta gratis", "✓ Abogados verificados"],
