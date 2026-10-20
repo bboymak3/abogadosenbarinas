@@ -1,0 +1,25 @@
+{
+  "name": "Abogados en Barinas · Directorio Legal y SAREN en Línea",
+  "short_name": "Abogados Barinas",
+  "description": "Abogados en los 12 municipios del estado Barinas. Trámites SAREN en línea, civil, familia, laboral, penal y mercantil. Atención inmediata por WhatsApp.",
+  "lang": "es-VE",
+  "dir": "ltr",
+  "id": "/",
+  "start_url": "/?utm_source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f2f2f7",
+  "theme_color": "#1a237e",
+  "categories": ["business", "productivity"],
+  "icons": [
+    { "src": "/assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/assets/icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "/assets/icons/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ],
+  "shortcuts": [
+    { "name": "SAREN en línea", "short_name": "SAREN", "url": "/saren-en-linea/", "icons": [{ "src": "/assets/icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Municipios y parroquias", "short_name": "Municipios", "url": "/abogados/", "icons": [{ "src": "/assets/icons/icon-192.png", "sizes": "192x192" }] }
+  ]
+}

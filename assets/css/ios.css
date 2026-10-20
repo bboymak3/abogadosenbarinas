@@ -1,0 +1,788 @@
+/* ==========================================================================
+   Capa iOS — Abogados en Barinas
+   Estilo inspirado en iOS / iPhone (vidrio esmerilado, tipografía del sistema,
+   esquinas continuas, listas agrupadas y barra de pestañas inferior).
+   Se carga DESPUÉS de los estilos existentes: solo refina, no elimina nada.
+   ========================================================================== */
+
+:root {
+    --ios-blue: #007aff;
+    --ios-green: #34c759;
+    --ios-wa: #25d366;
+    --ios-red: #ff3b30;
+    --ios-orange: #ff9500;
+    --ios-navy: #1a237e;
+    --ios-gold: #c5a059;
+
+    --ios-bg: #f2f2f7;               /* systemGroupedBackground */
+    --ios-card: #ffffff;             /* secondarySystemGroupedBackground */
+    --ios-fill: rgba(120, 120, 128, 0.12);
+    --ios-label: #000000;
+    --ios-label-2: rgba(60, 60, 67, 0.6);
+    --ios-separator: rgba(60, 60, 67, 0.18);
+    --ios-bar: rgba(249, 249, 249, 0.82);
+    --ios-bar-border: rgba(0, 0, 0, 0.12);
+    --ios-tint: var(--ios-navy);
+
+    --ios-radius-s: 10px;
+    --ios-radius: 14px;
+    --ios-radius-l: 22px;
+    --ios-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 8px 24px rgba(0, 0, 0, 0.06);
+    --ios-font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "SF Pro Display", "Helvetica Neue", "Segoe UI", Roboto, Arial, sans-serif;
+    --ios-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+
+    --ios-tabbar-h: 64px;
+    --ios-safe-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+@media (prefers-color-scheme: dark) {
+    .ios-page {
+        --ios-bg: #000000;
+        --ios-card: #1c1c1e;
+        --ios-fill: rgba(118, 118, 128, 0.24);
+        --ios-label: #ffffff;
+        --ios-label-2: rgba(235, 235, 245, 0.6);
+        --ios-separator: rgba(84, 84, 88, 0.6);
+        --ios-bar: rgba(22, 22, 24, 0.82);
+        --ios-bar-border: rgba(255, 255, 255, 0.12);
+        --ios-tint: #8c9eff;
+    }
+}
+
+/* --------------------------------------------------------------------------
+   1. Base global (sensación nativa)
+   -------------------------------------------------------------------------- */
+html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+/* Evita desbordes horizontales en iPhone (no rompe position: sticky) */
+html, body { overflow-x: clip; }
+
+/* En móvil, las animaciones laterales de AOS desplazaban el contenido fuera
+   de la pantalla y ensanchaban la página: se mantiene solo el desvanecido. */
+@media (max-width: 991.98px) {
+    [data-aos="fade-left"], [data-aos="fade-right"] { transform: none !important; }
+}
+
+body {
+    font-family: var(--ios-font);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: transparent;
+}
+
+a, button, summary, .municipio-tag {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+}
+
+/* --------------------------------------------------------------------------
+   2. Refinamientos iOS sobre los componentes existentes de la página
+   -------------------------------------------------------------------------- */
+
+/* Barra superior con vidrio esmerilado */
+.main-nav {
+    background: rgba(26, 35, 126, 0.86);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+    box-shadow: 0 0.5px 0 rgba(255, 255, 255, 0.15), 0 4px 18px rgba(0, 0, 0, 0.18);
+    padding-top: calc(12px + env(safe-area-inset-top, 0px));
+    padding-bottom: 12px;
+}
+
+.logo-img {
+    border-radius: 12px;      /* esquina continua tipo icono iOS */
+    box-shadow: inset 0 0 0 0.5px rgba(0, 0, 0, 0.12);
+}
+
+.nav-link {
+    border-radius: 9px;
+}
+
+.whatsapp-btn-nav,
+.btn-gold,
+.btn-outline-light {
+    transition: transform 0.2s var(--ios-ease), background 0.2s var(--ios-ease), box-shadow 0.2s var(--ios-ease);
+}
+
+.whatsapp-btn-nav:active,
+.btn-gold:active,
+.btn-outline-light:active,
+.whatsapp-btn-large:active,
+.municipio-tag:active,
+.ios-btn:active {
+    transform: scale(0.97);
+    opacity: 0.85;
+}
+
+.hero-title { letter-spacing: -0.02em; }
+.section-title { letter-spacing: -0.015em; font-weight: 700; }
+
+/* Tarjetas */
+.abogado-card {
+    border-radius: var(--ios-radius-l);
+    box-shadow: var(--ios-shadow);
+}
+
+.abogado-verified { border-radius: 999px; }
+
+.whatsapp-btn-large {
+    border-radius: var(--ios-radius);
+}
+
+.municipio-tag {
+    border-radius: 999px;
+    padding: 9px 20px;
+}
+
+/* Desplegables y acordeones como listas agrupadas */
+details {
+    border-radius: var(--ios-radius-l);
+    border-color: transparent;
+    box-shadow: var(--ios-shadow);
+}
+
+summary { font-size: 1.15rem; letter-spacing: -0.01em; }
+summary::-webkit-details-marker { display: none; }
+
+.accordion-item {
+    border-radius: var(--ios-radius) !important;
+    overflow: hidden;
+}
+
+.accordion-button { font-weight: 600; }
+
+.card { border-radius: var(--ios-radius-l); }
+.card-header:first-child { border-radius: var(--ios-radius-l) var(--ios-radius-l) 0 0; }
+.alert { border-radius: var(--ios-radius); }
+.table-responsive { border-radius: var(--ios-radius); }
+.btn { border-radius: 12px; }
+.badge { border-radius: 999px; font-weight: 600; }
+
+/* Modal de WhatsApp como "hoja" iOS en móvil */
+.modal-whatsapp {
+    background: rgba(0, 0, 0, 0.45);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+.modal-content-custom {
+    border-radius: 28px;
+    border-width: 0;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+@media (max-width: 575.98px) {
+    .modal-whatsapp.active { align-items: flex-end; }
+    .modal-content-custom {
+        width: 100%;
+        max-width: none;
+        border-radius: 28px 28px 0 0;
+        padding: 28px 20px calc(24px + var(--ios-safe-bottom));
+        max-height: 92vh;
+        overflow-y: auto;
+        animation: iosSheetUp 0.35s var(--ios-ease);
+    }
+    .modal-content-custom::before {
+        content: "";
+        display: block;
+        width: 36px;
+        height: 5px;
+        border-radius: 3px;
+        background: rgba(60, 60, 67, 0.3);
+        margin: -14px auto 16px;
+    }
+    .whatsapp-giant { width: 88px; height: 88px; font-size: 3rem; }
+}
+
+@keyframes iosSheetUp {
+    from { transform: translateY(100%); }
+    to   { transform: translateY(0); }
+}
+
+/* --------------------------------------------------------------------------
+   3. Barra inferior fija: LLAMAR AHORA (rojo) + WhatsApp (verde)
+   -------------------------------------------------------------------------- */
+body.has-ios-tabbar {
+    padding-bottom: calc(var(--ios-tabbar-h) + var(--ios-safe-bottom));
+}
+
+.ios-tabbar {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1050;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    padding: 8px 12px calc(8px + var(--ios-safe-bottom));
+    background: rgba(17, 17, 17, 0.92);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+    border-top: 0.5px solid rgba(255, 255, 255, 0.1);
+    font-family: var(--ios-font);
+}
+
+.ios-tab {
+    flex: 1 1 0;
+    max-width: 534px;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #fff !important;
+    text-decoration: none !important;
+    font-size: 1.15rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+    transition: transform 0.15s var(--ios-ease), filter 0.15s;
+}
+
+.ios-tab i { font-size: 1.25rem; }
+.ios-tab:hover, .ios-tab:focus-visible { filter: brightness(1.08); }
+.ios-tab:active { transform: scale(0.97); filter: brightness(0.95); }
+
+.ios-tab--call { background: #d32f2f; text-transform: uppercase; }
+.ios-tab--wa { background: var(--ios-wa); }
+
+.ios-tab span { white-space: nowrap; }
+.ios-tab, .ios-tab span, .ios-tab i { margin: 0; padding: 0; }
+.ios-tab { padding: 0 10px; }
+
+@media (max-width: 430px) {
+    .ios-tabbar { gap: 8px; padding-left: 8px; padding-right: 8px; }
+    .ios-tab { font-size: 1rem; gap: 7px; }
+}
+
+@media (max-width: 340px) {
+    .ios-tab { font-size: 0.88rem; letter-spacing: 0; }
+}
+
+/* El botón flotante de WhatsApp queda por encima de la barra */
+body.has-ios-tabbar .whatsapp-float {
+    bottom: calc(var(--ios-tabbar-h) + var(--ios-safe-bottom) + 16px);
+}
+
+/* En móvil la barra inferior ya ofrece WhatsApp: el botón flotante se oculta
+   para no tapar contenido (sigue visible en escritorio). */
+@media (max-width: 991.98px) {
+    body.has-ios-tabbar .whatsapp-float { display: none; }
+}
+
+@media print {
+    .ios-tabbar { display: none !important; }
+    body.has-ios-tabbar { padding-bottom: 0; }
+}
+
+/* --------------------------------------------------------------------------
+   4. Componentes de las landings (municipios, parroquias, SAREN)
+   -------------------------------------------------------------------------- */
+.ios-page {
+    margin: 0;
+    background: var(--ios-bg);
+    color: var(--ios-label);
+    line-height: 1.5;
+    font-size: 17px;           /* tamaño "body" de iOS */
+}
+
+.ios-page *, .ios-page *::before, .ios-page *::after { box-sizing: border-box; }
+.ios-page img { max-width: 100%; height: auto; }
+.ios-page a { color: var(--ios-tint); }
+
+.ios-wrap {
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Barra de navegación superior */
+.ios-nav {
+    position: sticky;
+    top: 0;
+    z-index: 1040;
+    background: rgba(26, 35, 126, 0.88);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+    padding-top: env(safe-area-inset-top, 0px);
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.12);
+}
+
+.ios-nav .ios-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    min-height: 56px;
+}
+
+.ios-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff !important;
+    text-decoration: none;
+    min-width: 0;
+}
+
+.ios-brand-icon {
+    flex: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 9px;
+    background: var(--ios-gold);
+    color: var(--ios-navy);
+    display: grid;
+    place-items: center;
+    font-weight: 800;
+    font-size: 0.9rem;
+}
+
+.ios-brand-text { line-height: 1.1; min-width: 0; }
+.ios-brand-text strong { display: block; color: var(--ios-gold); font-size: 0.95rem; letter-spacing: 0.02em; }
+.ios-brand-text small { display: block; color: rgba(255, 255, 255, 0.75); font-size: 0.68rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.ios-nav-links { display: flex; align-items: center; gap: 4px; }
+.ios-nav-links a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 7px 12px;
+    border-radius: 9px;
+}
+.ios-nav-links a:hover { background: rgba(255, 255, 255, 0.12); color: #fff; }
+.ios-nav-links .ios-nav-cta { background: var(--ios-wa); color: #fff; font-weight: 700; }
+
+@media (max-width: 860px) {
+    .ios-nav-links a:not(.ios-nav-cta) { display: none; }
+}
+
+/* Migas de pan */
+.ios-breadcrumb {
+    list-style: none;
+    margin: 0;
+    padding: 14px 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    font-size: 0.82rem;
+    color: var(--ios-label-2);
+}
+.ios-breadcrumb li + li::before { content: "›"; margin-right: 4px; opacity: 0.6; }
+.ios-breadcrumb a { text-decoration: none; }
+
+/* Hero */
+.ios-hero {
+    background: linear-gradient(160deg, #1a237e 0%, #0d1642 70%);
+    color: #fff;
+    padding: 34px 0 40px;
+    position: relative;
+    overflow: hidden;
+}
+.ios-hero::after {
+    content: "";
+    position: absolute;
+    inset: auto -20% -60% auto;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(197, 160, 89, 0.35), transparent 70%);
+    pointer-events: none;
+}
+.ios-hero .ios-breadcrumb { color: rgba(255, 255, 255, 0.7); padding-top: 0; margin-bottom: 16px; }
+.ios-hero .ios-breadcrumb a { color: rgba(255, 255, 255, 0.9); }
+
+.ios-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(197, 160, 89, 0.95);
+    color: var(--ios-navy);
+    padding: 5px 12px;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.ios-hero h1 {
+    font-size: clamp(1.75rem, 5.2vw, 2.9rem);
+    line-height: 1.12;
+    letter-spacing: -0.025em;
+    font-weight: 800;
+    margin: 14px 0 12px;
+}
+.ios-hero h1 span { color: var(--ios-gold); }
+.ios-hero p.lead { font-size: 1.05rem; color: rgba(255, 255, 255, 0.88); max-width: 720px; margin: 0 0 22px; }
+
+.ios-hero-actions { display: flex; flex-wrap: wrap; gap: 10px; position: relative; z-index: 1; }
+.ios-hero-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; position: relative; z-index: 1; }
+.ios-hero-pills span {
+    font-size: 0.78rem;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.12);
+    border: 0.5px solid rgba(255, 255, 255, 0.2);
+    padding: 5px 11px;
+    border-radius: 999px;
+}
+
+/* Botones */
+.ios-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 50px;
+    padding: 0 22px;
+    border-radius: 14px;
+    border: 0;
+    font: 600 1rem/1 var(--ios-font);
+    text-decoration: none !important;
+    cursor: pointer;
+    transition: transform 0.15s var(--ios-ease), filter 0.15s;
+}
+.ios-btn:hover { filter: brightness(1.06); }
+.ios-btn--wa { background: var(--ios-wa); color: #fff !important; }
+.ios-btn--call { background: var(--ios-blue); color: #fff !important; }
+.ios-btn--gold { background: var(--ios-gold); color: var(--ios-navy) !important; }
+.ios-btn--glass { background: rgba(255, 255, 255, 0.14); color: #fff !important; border: 0.5px solid rgba(255, 255, 255, 0.3); }
+.ios-btn--tinted { background: var(--ios-fill); color: var(--ios-tint) !important; min-height: 40px; padding: 0 14px; font-size: 0.9rem; border-radius: 10px; }
+.ios-btn--block { width: 100%; }
+
+@media (max-width: 575.98px) {
+    .ios-hero-actions .ios-btn { flex: 1 1 100%; }
+}
+
+/* Secciones */
+.ios-section { padding: 30px 0 6px; }
+.ios-section-head { margin: 0 4px 12px; }
+.ios-eyebrow {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--ios-label-2);
+    margin-bottom: 4px;
+}
+.ios-section h2 {
+    font-size: clamp(1.35rem, 3.6vw, 1.85rem);
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin: 0 0 6px;
+    font-weight: 750;
+}
+.ios-section-head p { margin: 0; color: var(--ios-label-2); font-size: 0.98rem; }
+
+/* Tarjetas */
+.ios-card {
+    background: var(--ios-card);
+    border-radius: var(--ios-radius-l);
+    box-shadow: var(--ios-shadow);
+    padding: 20px;
+}
+
+.ios-grid {
+    display: grid;
+    gap: 14px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.ios-service { display: flex; flex-direction: column; gap: 10px; }
+.ios-service h3 { margin: 0; font-size: 1.08rem; letter-spacing: -0.01em; }
+.ios-service p { margin: 0; color: var(--ios-label-2); font-size: 0.93rem; }
+.ios-service ul { margin: 0; padding: 0; list-style: none; font-size: 0.92rem; }
+.ios-service li { padding: 7px 0; border-bottom: 0.5px solid var(--ios-separator); display: flex; gap: 8px; align-items: baseline; }
+.ios-service li:last-child { border-bottom: 0; }
+.ios-service li i { color: var(--ios-green); font-size: 0.8rem; }
+.ios-service .ios-btn { margin-top: auto; align-self: flex-start; }
+
+.ios-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 11px;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    font-size: 1.15rem;
+    flex: none;
+}
+.ios-icon--blue { background: var(--ios-blue); }
+.ios-icon--red { background: var(--ios-red); }
+.ios-icon--orange { background: var(--ios-orange); }
+.ios-icon--purple { background: #af52de; }
+.ios-icon--teal { background: #30b0c7; }
+.ios-icon--green { background: var(--ios-green); }
+.ios-icon--indigo { background: #5856d6; }
+.ios-icon--gold { background: var(--ios-gold); }
+.ios-icon--navy { background: var(--ios-navy); }
+
+/* Destacado SAREN en línea */
+.ios-saren {
+    background: linear-gradient(150deg, #1a237e 0%, #283593 55%, #3949ab 100%);
+    color: #fff;
+    border-radius: 26px;
+    padding: 24px;
+    box-shadow: 0 18px 44px rgba(26, 35, 126, 0.28);
+    position: relative;
+    overflow: hidden;
+}
+.ios-saren::before {
+    content: "";
+    position: absolute;
+    top: -80px;
+    right: -60px;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(197, 160, 89, 0.45), transparent 70%);
+}
+.ios-saren > * { position: relative; }
+.ios-saren h2 { color: #fff; }
+.ios-saren .ios-eyebrow { color: var(--ios-gold); }
+.ios-saren p { color: rgba(255, 255, 255, 0.88); }
+.ios-saren-grid {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    margin: 18px 0 20px;
+}
+.ios-saren-item {
+    background: rgba(255, 255, 255, 0.1);
+    border: 0.5px solid rgba(255, 255, 255, 0.18);
+    border-radius: 16px;
+    padding: 13px 14px;
+    display: flex;
+    gap: 11px;
+    align-items: flex-start;
+    font-size: 0.92rem;
+}
+.ios-saren-item i { color: var(--ios-gold); margin-top: 3px; }
+.ios-saren-item strong { display: block; color: #fff; font-size: 0.97rem; }
+.ios-saren-item span { color: rgba(255, 255, 255, 0.78); font-size: 0.85rem; }
+.ios-saren-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+
+/* Lista agrupada estilo Ajustes */
+.ios-list {
+    background: var(--ios-card);
+    border-radius: var(--ios-radius);
+    box-shadow: var(--ios-shadow);
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.ios-list li { position: relative; }
+.ios-list li + li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 16px;
+    right: 0;
+    border-top: 0.5px solid var(--ios-separator);
+}
+.ios-list a, .ios-list .ios-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 13px 16px;
+    color: var(--ios-label) !important;
+    text-decoration: none;
+    font-size: 0.98rem;
+}
+.ios-list a::after { content: "›"; color: var(--ios-label-2); font-size: 1.3rem; line-height: 1; }
+.ios-list a:active { background: var(--ios-fill); }
+.ios-list small { color: var(--ios-label-2); font-size: 0.82rem; }
+
+.ios-columns { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+
+/* Pasos */
+.ios-steps { counter-reset: paso; display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+.ios-step { position: relative; padding-left: 62px; }
+.ios-step::before {
+    counter-increment: paso;
+    content: counter(paso);
+    position: absolute;
+    left: 18px;
+    top: 18px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--ios-tint);
+    color: #fff;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+}
+.ios-step h3 { margin: 0 0 4px; font-size: 1rem; }
+.ios-step p { margin: 0; font-size: 0.9rem; color: var(--ios-label-2); }
+
+/* FAQ */
+.ios-faq details {
+    background: var(--ios-card);
+    border-radius: var(--ios-radius);
+    box-shadow: var(--ios-shadow);
+    margin-bottom: 10px;
+    overflow: hidden;
+    border: 0;
+}
+.ios-faq summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 15px 44px 15px 16px;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--ios-label);
+    position: relative;
+    display: block;
+    background: transparent;
+}
+.ios-faq summary::-webkit-details-marker { display: none; }
+.ios-faq summary::after {
+    content: "";
+    position: absolute;
+    right: 18px;
+    top: 50%;
+    width: 9px;
+    height: 9px;
+    border-right: 2px solid var(--ios-label-2);
+    border-bottom: 2px solid var(--ios-label-2);
+    transform: translateY(-70%) rotate(45deg);
+    transition: transform 0.2s var(--ios-ease);
+}
+.ios-faq details[open] summary::after { transform: translateY(-30%) rotate(-135deg); }
+.ios-faq details > div { padding: 0 16px 16px; color: var(--ios-label-2); font-size: 0.95rem; border: 0; background: transparent; }
+
+/* Chips de enlaces (parroquias / municipios) */
+.ios-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.ios-chips a {
+    background: var(--ios-card);
+    color: var(--ios-label) !important;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    box-shadow: var(--ios-shadow);
+}
+.ios-chips a:hover { color: var(--ios-tint) !important; }
+.ios-chips a.is-current { background: var(--ios-tint); color: #fff !important; }
+
+.ios-prose { font-size: 1rem; }
+.ios-prose p { margin: 0 0 12px; }
+.ios-prose p:last-child { margin-bottom: 0; }
+
+.ios-note {
+    font-size: 0.82rem;
+    color: var(--ios-label-2);
+    margin: 10px 4px 0;
+}
+
+/* CTA final */
+.ios-cta {
+    text-align: center;
+    background: var(--ios-card);
+    border-radius: 26px;
+    padding: 28px 20px;
+    box-shadow: var(--ios-shadow);
+}
+.ios-cta h2 { margin-bottom: 6px; }
+.ios-cta p { color: var(--ios-label-2); margin: 0 auto 18px; max-width: 560px; }
+.ios-cta .ios-hero-actions { justify-content: center; }
+
+/* Pie de página */
+.ios-footer {
+    margin-top: 36px;
+    padding: 28px 0 24px;
+    background: #0d1b2a;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 0.88rem;
+}
+.ios-footer a { color: rgba(255, 255, 255, 0.85); text-decoration: none; }
+.ios-footer a:hover { color: var(--ios-gold); }
+.ios-footer-grid { display: grid; gap: 20px; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }
+.ios-footer h3 { color: var(--ios-gold); font-size: 0.95rem; margin: 0 0 10px; }
+.ios-footer ul { list-style: none; margin: 0; padding: 0; }
+.ios-footer li { margin-bottom: 6px; }
+.ios-footer-bottom { border-top: 0.5px solid rgba(255, 255, 255, 0.15); margin-top: 20px; padding-top: 16px; font-size: 0.78rem; text-align: center; }
+
+/* Sección SAREN añadida a la portada (usa Bootstrap + capa iOS) */
+.saren-home { padding: 56px 0; background: var(--ios-bg); }
+.saren-home .ios-saren { max-width: 1080px; margin: 0 auto; }
+
+.cobertura-home { padding: 48px 0; background: #fff; }
+.cobertura-home .ios-list { max-width: none; }
+
+@media (prefers-reduced-motion: reduce) {
+    .ios-tab, .ios-btn, .modal-content-custom { transition: none !important; animation: none !important; }
+}
+
+/* Menú de escritorio: evita saltos de línea con los nuevos enlaces */
+.desktop-menu .nav-link,
+.whatsapp-btn-nav { white-space: nowrap; }
+
+@media (max-width: 1280px) {
+    .desktop-menu { gap: 2px; }
+    .desktop-menu .nav-link { padding: 8px 9px; font-size: 0.92rem; }
+    .whatsapp-btn-nav { padding: 9px 14px; font-size: 0.92rem; }
+}
+
+/* Zonas de Barinas donde trabajamos (portada) */
+.zonas-grid {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+.zona-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    background: var(--ios-card);
+    border-radius: var(--ios-radius);
+    box-shadow: var(--ios-shadow);
+    color: var(--ios-label);
+    text-decoration: none;
+    transition: transform 0.15s var(--ios-ease), box-shadow 0.15s;
+}
+.zona-card:hover { color: var(--ios-navy); transform: translateY(-2px); box-shadow: 0 10px 28px rgba(26, 35, 126, 0.14); }
+.zona-card:active { transform: scale(0.98); }
+.zona-ic {
+    flex: none;
+    width: 42px;
+    height: 42px;
+    border-radius: 11px;
+    background: var(--ios-fill);
+    display: grid;
+    place-items: center;
+    font-size: 1.3rem;
+}
+.zona-card strong { display: block; font-size: 0.98rem; line-height: 1.25; }
+.zona-card small { display: block; color: var(--ios-label-2); font-size: 0.8rem; }
+
+/* Crédito del desarrollador en el pie */
+.ios-credit { opacity: 0.85; }
+.ios-credit a { color: var(--ios-gold) !important; text-decoration: underline; text-underline-offset: 2px; }
+
+/* Contraste legible en el pie oscuro de la portada */
+footer .text-muted { color: rgba(255, 255, 255, 0.62) !important; }
+footer .ios-credit { color: rgba(255, 255, 255, 0.8); }
+
+/* Cabecera de las landings en móvil: sin saltos de línea */
+.ios-brand-text strong,
+.ios-nav-links .ios-nav-cta { white-space: nowrap; }
+
+@media (max-width: 480px) {
+    .ios-brand-text strong { font-size: 0.85rem; }
+    .ios-nav-cta .ios-nav-num { display: none; }
+    .ios-nav-links .ios-nav-cta { padding: 8px 12px; font-size: 1.1rem; }
+}
