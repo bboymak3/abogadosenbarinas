@@ -5,6 +5,7 @@ Allow: /
 Disallow: /cgi-bin/
 Disallow: /tmp/
 Disallow: /logs/
+Disallow: /tools/
 
 # Tu Sitemap
 Sitemap: https://abogadosenbarinas.pages.dev/sitemap.xml
