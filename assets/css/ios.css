@@ -381,6 +381,14 @@ body.has-ios-tabbar .whatsapp-float {
 /* Hero */
 .ios-hero {
     background: linear-gradient(160deg, #1a237e 0%, #0d1642 70%);
+    background:
+        linear-gradient(100deg, rgba(13, 22, 66, 0.94) 0%, rgba(13, 22, 66, 0.78) 50%, rgba(13, 22, 66, 0.35) 100%),
+        url("/assets/images/abogados-en-barinas-justicia.jpg") right center / cover no-repeat,
+        #0d1642;
+    background:
+        linear-gradient(100deg, rgba(13, 22, 66, 0.94) 0%, rgba(13, 22, 66, 0.78) 50%, rgba(13, 22, 66, 0.35) 100%),
+        image-set(url("/assets/images/abogados-en-barinas-justicia.webp") type("image/webp"), url("/assets/images/abogados-en-barinas-justicia.jpg") type("image/jpeg")) right center / cover no-repeat,
+        #0d1642;
     color: #fff;
     padding: 34px 0 40px;
     position: relative;
@@ -395,6 +403,18 @@ body.has-ios-tabbar .whatsapp-float {
     border-radius: 50%;
     background: radial-gradient(circle, rgba(197, 160, 89, 0.35), transparent 70%);
     pointer-events: none;
+}
+@media (max-width: 767.98px) {
+    .ios-hero {
+        background:
+            linear-gradient(180deg, rgba(13, 22, 66, 0.86) 0%, rgba(13, 22, 66, 0.74) 50%, rgba(13, 22, 66, 0.92) 100%),
+            url("/assets/images/abogados-en-barinas-justicia-movil.jpg") 70% center / cover no-repeat,
+            #0d1642;
+        background:
+            linear-gradient(180deg, rgba(13, 22, 66, 0.86) 0%, rgba(13, 22, 66, 0.74) 50%, rgba(13, 22, 66, 0.92) 100%),
+            image-set(url("/assets/images/abogados-en-barinas-justicia-movil.webp") type("image/webp"), url("/assets/images/abogados-en-barinas-justicia-movil.jpg") type("image/jpeg")) 70% center / cover no-repeat,
+            #0d1642;
+    }
 }
 .ios-hero .ios-breadcrumb { color: rgba(255, 255, 255, 0.7); padding-top: 0; margin-bottom: 16px; }
 .ios-hero .ios-breadcrumb a { color: rgba(255, 255, 255, 0.9); }
