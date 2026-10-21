@@ -30,7 +30,7 @@ SITE = "https://abogadosenbarinas.pages.dev"
 PHONE_DISPLAY = "0416-7775771"
 PHONE_TEL = "+584167775771"
 WA_NUMBER = "584167775771"
-IMAGE = "https://abogadosvalencia.pages.dev/images/abogados-en-barinas-tramines-legales-abogado-notaria-registro-tribunales.jpg"
+IMAGE = SITE + "/assets/images/abogados-en-barinas-justicia-og.jpg"
 TODAY = datetime.date.today().isoformat()
 ORG_ID = SITE + "/#organizacion"
 
@@ -165,6 +165,9 @@ def head(titulo, descripcion, url, keywords, schema, robots="index, follow, max-
     <meta property="og:description" content="{e(descripcion)}">
     <meta property="og:url" content="{url}">
     <meta property="og:image" content="{IMAGE}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Estatua de la justicia sobre el mapa de Venezuela - Abogados en Barinas">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{e(titulo)}">
     <meta name="twitter:description" content="{e(descripcion)}">
@@ -173,6 +176,8 @@ def head(titulo, descripcion, url, keywords, schema, robots="index, follow, max-
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="/assets/css/ios.css">
+    <link rel="preload" as="image" href="/assets/images/abogados-en-barinas-justicia-movil.webp" type="image/webp" media="(max-width: 767.98px)">
+    <link rel="preload" as="image" href="/assets/images/abogados-en-barinas-justicia.webp" type="image/webp" media="(min-width: 768px)">
 
     <script type="application/ld+json">
 {json.dumps(schema, ensure_ascii=False, indent=2)}

@@ -19,9 +19,13 @@
     
     <!-- Canonical -->
     <link rel="canonical" href="https://abogadosenbarinas.pages.dev/">
+
+    <!-- Precarga de la imagen del Hero -->
+    <link rel="preload" as="image" href="/assets/images/abogados-en-barinas-justicia-movil.webp" type="image/webp" media="(max-width: 767.98px)">
+    <link rel="preload" as="image" href="/assets/images/abogados-en-barinas-justicia.webp" type="image/webp" media="(min-width: 768px)">
     
     <!-- FAVICON (Icono de Pestaña) - IMAGEN AGREGADA AQUÍ -->
-    <link rel="shortcut icon" href="https://abogadosvalencia.pages.dev/images/abogados-en-barinas-tramines-legales-abogado-notaria-registro-tribunales.jpg" type="image/jpeg">
+    <link rel="shortcut icon" href="/assets/icons/favicon-32.png" type="image/png">
     <!-- PWA / iOS -->
     <link rel="manifest" href="/manifest.webmanifest">
     <meta name="theme-color" content="#1a237e">
@@ -40,11 +44,14 @@
     <!-- Open Graph -->
     <meta property="og:locale" content="es_VE">
     <meta property="og:site_name" content="Abogados en Barinas">
-    <meta property="og:image" content="https://abogadosvalencia.pages.dev/images/abogados-en-barinas-tramines-legales-abogado-notaria-registro-tribunales.jpg">
+    <meta property="og:image" content="https://abogadosenbarinas.pages.dev/assets/images/abogados-en-barinas-justicia-og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Estatua de la justicia sobre el mapa de Venezuela - Abogados en Barinas">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Abogados en Barinas | Directorio Legal y SAREN en Línea">
     <meta name="twitter:description" content="Abogados en los 12 municipios de Barinas. Trámites SAREN en línea, civil, familia, laboral y penal. Consulta inmediata vía WhatsApp.">
-    <meta name="twitter:image" content="https://abogadosvalencia.pages.dev/images/abogados-en-barinas-tramines-legales-abogado-notaria-registro-tribunales.jpg">
+    <meta name="twitter:image" content="https://abogadosenbarinas.pages.dev/assets/images/abogados-en-barinas-justicia-og.jpg">
 
     <!-- Datos estructurados (fragmentos enriquecidos) -->
     <script type="application/ld+json">
@@ -57,7 +64,7 @@
       "name": "Abogados en Barinas",
       "url": "https://abogadosenbarinas.pages.dev/",
       "logo": "https://abogadosenbarinas.pages.dev/assets/icons/icon-512.png",
-      "image": "https://abogadosvalencia.pages.dev/images/abogados-en-barinas-tramines-legales-abogado-notaria-registro-tribunales.jpg",
+      "image": "https://abogadosenbarinas.pages.dev/assets/images/abogados-en-barinas-justicia-og.jpg",
       "telephone": "+584167775771",
       "contactPoint": {
         "@type": "ContactPoint",
@@ -87,7 +94,7 @@
       "@id": "https://abogadosenbarinas.pages.dev/#servicio-legal",
       "name": "Abogados en Barinas - Directorio Legal y SAREN en Línea",
       "url": "https://abogadosenbarinas.pages.dev/",
-      "image": "https://abogadosvalencia.pages.dev/images/abogados-en-barinas-tramines-legales-abogado-notaria-registro-tribunales.jpg",
+      "image": "https://abogadosenbarinas.pages.dev/assets/images/abogados-en-barinas-justicia-og.jpg",
       "telephone": "+584167775771",
       "priceRange": "$$",
       "description": "Directorio de abogados en Barinas, Venezuela. Trámites SAREN en línea, derecho civil, familia, laboral, penal, mercantil y agrario en los 12 municipios.",
@@ -584,11 +591,28 @@
             right: 0;
             bottom: 0;
             /* URL DE LA IMAGEN DE BANNER */
-            background-image: url('https://abogadosvalencia.pages.dev/images/abogados-en-barinas-tramines-legales-abogado-notaria-registro-tribunales.jpg');
+            background-image:
+                linear-gradient(180deg, rgba(13, 22, 66, 0.72) 0%, rgba(13, 22, 66, 0.55) 45%, rgba(13, 22, 66, 0.85) 100%),
+                url('/assets/images/abogados-en-barinas-justicia.jpg');
+            background-image:
+                linear-gradient(180deg, rgba(13, 22, 66, 0.72) 0%, rgba(13, 22, 66, 0.55) 45%, rgba(13, 22, 66, 0.85) 100%),
+                image-set(url('/assets/images/abogados-en-barinas-justicia.webp') type('image/webp'), url('/assets/images/abogados-en-barinas-justicia.jpg') type('image/jpeg'));
             background-size: cover;
-            background-position: center;
-            opacity: 0.2; /* Oscuridad para que el texto se lea bien */
+            background-position: center right;
+            opacity: 1; /* Capa oscura en el degradado para que el texto se lea bien */
             z-index: 1;
+        }
+        
+        @media (max-width: 767.98px) {
+            .hero-barinas::before {
+                background-image:
+                    linear-gradient(180deg, rgba(13, 22, 66, 0.78) 0%, rgba(13, 22, 66, 0.62) 50%, rgba(13, 22, 66, 0.9) 100%),
+                    url('/assets/images/abogados-en-barinas-justicia-movil.jpg');
+                background-image:
+                    linear-gradient(180deg, rgba(13, 22, 66, 0.78) 0%, rgba(13, 22, 66, 0.62) 50%, rgba(13, 22, 66, 0.9) 100%),
+                    image-set(url('/assets/images/abogados-en-barinas-justicia-movil.webp') type('image/webp'), url('/assets/images/abogados-en-barinas-justicia-movil.jpg') type('image/jpeg'));
+                background-position: 70% center;
+            }
         }
         
         /* Patrón decorativo original sobre la imagen */
@@ -2100,7 +2124,10 @@
                 </div>
                 <div class="col-lg-5 text-center mt-4 mt-lg-0" data-aos="fade-left">
                     <!-- IMAGEN DE CONTACTO AGREGADA AQUÍ -->
-                    <img src="https://abogadosvalencia.pages.dev/images/abogados-en-barinas-tramines-legales-abogado-notaria-registro-tribunales.jpg" alt="Abogados en Barinas - Contacto" class="img-fluid rounded shadow border border-3 border-white">
+                    <picture>
+                        <source type="image/webp" srcset="/assets/images/abogados-en-barinas-justicia-movil.webp 900w, /assets/images/abogados-en-barinas-justicia.webp 1920w" sizes="(min-width: 992px) 40vw, 100vw">
+                        <img src="/assets/images/abogados-en-barinas-justicia-movil.jpg" srcset="/assets/images/abogados-en-barinas-justicia-movil.jpg 900w, /assets/images/abogados-en-barinas-justicia.jpg 1920w" sizes="(min-width: 992px) 40vw, 100vw" width="900" height="502" loading="lazy" decoding="async" alt="Abogados en Barinas - Estatua de la justicia sobre el mapa de Venezuela" class="img-fluid rounded shadow border border-3 border-white">
+                    </picture>
                 </div>
             </div>
         </div>
